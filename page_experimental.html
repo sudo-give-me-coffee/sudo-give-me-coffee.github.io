@@ -12,7 +12,7 @@
           body: JSON.stringify({
             'code_id' : urlParams.get('code')
           })
-        }) .then(response => response.json())
+        }) .then(response => response)
         .then(data => {
           window.alert(data);
         })
