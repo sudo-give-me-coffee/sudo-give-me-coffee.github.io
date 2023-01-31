@@ -4,18 +4,23 @@
     <meta charset="utf-8">
     <title></title>
     <script>
-      const queryString = window.location.search;
-      const urlParams   = new URLSearchParams(queryString);
-      if (queryString.includes('?code=')) {
+      
+      async function getToken(code) {
         await fetch(`https://teste-next-js-weld.vercel.app/api/get_auth_token`, {
           method: "POST",
           body: JSON.stringify({
-            'code_id' : urlParams.get('code')
+            'code_id' : code
           })
         }) .then(response => response)
         .then(data => {
-          window.alert(data);
+          return data;
         })
+      }
+      
+      const queryString = window.location.search;
+      const urlParams   = new URLSearchParams(queryString);
+      if (queryString.includes('?code=')) {
+        var x = getToken(urlParams.get('code'));
       } else {
         // check login
       }
