@@ -7,7 +7,7 @@
       const queryString = window.location.search;
       const urlParams   = new URLSearchParams(queryString);
       if (queryString.includes('?code=')) {
-        fetch(`https://teste-next-js-weld.vercel.app/api/get_auth_token`, {
+        await fetch(`https://teste-next-js-weld.vercel.app/api/get_auth_token`, {
           method: "POST",
           body: JSON.stringify({
             'code_id' : urlParams.get('code')
