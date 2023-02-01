@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <script>
-      /*
+      
       async function getToken(code) {
         await fetch(`https://teste-next-js-weld.vercel.app/api/get_auth_token`, {
           method: "POST",
@@ -21,9 +21,10 @@
       const urlParams   = new URLSearchParams(queryString);
       if (queryString.includes('?code=')) {
         var x = getToken(urlParams.get('code'));
+        document.write(x);
       } else {
         // check login
-      }*/
+      }
     </script>
   </head>
   <body>
