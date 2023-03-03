@@ -288,6 +288,15 @@
         document.getElementById("receituario").innerHTML = "";
         document.getElementById("receituario_se_dor").innerHTML = "";
         document.getElementById("receituario_se_febre").innerHTML = "";
+
+        document.getElementById("receituario").setAttribute("class", "container");
+        document.getElementById("receituario_cabecalho").setAttribute("class", "");
+      
+        document.getElementById("receituario_se_dor").setAttribute("class", "container");
+        document.getElementById("receituario_se_dor_cabecalho").setAttribute("class", "");
+      
+        document.getElementById("receituario_se_febre").setAttribute("class", "container");
+        document.getElementById("receituario_se_febre_cabecalho").setAttribute("class", "");
       }
       
       function limpa_formulario(){
@@ -331,24 +340,11 @@
       
         if (sem_medicamentos == 3) {
           alert("Você precisa adicionar ao menos 1 medicamento para imprimir uma receita");
-          document.getElementById("receituario").setAttribute("class", "");
-          document.getElementById("receituario_cabecalho").setAttribute("class", "");
-      
-          document.getElementById("receituario_se_dor").setAttribute("class", "");
-          document.getElementById("receituario_se_dor_cabecalho").setAttribute("class", "");
+          limpa_receitas();
           return;
         }
       
         window.print();
-
-        document.getElementById("receituario").setAttribute("class", "container");
-        document.getElementById("receituario_cabecalho").setAttribute("class", "");
-      
-        document.getElementById("receituario_se_dor").setAttribute("class", "container");
-        document.getElementById("receituario_se_dor_cabecalho").setAttribute("class", "");
-      
-        document.getElementById("receituario_se_febre").setAttribute("class", "container");
-        document.getElementById("receituario_se_febre_cabecalho").setAttribute("class", "");
       }
       
       function mostrar_ocultar_periodo() {
