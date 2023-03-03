@@ -115,6 +115,7 @@
             <h1 class="fw-light">Gerador de receitas</h1>
             <p class="lead text-muted">Use os campos abaixo para preencher a receita, quando terminar clique em <br> </p>
             <a href="#" class="btn btn-primary btn-lg px-4 gap-3" onclick="imprimir();">Imprimir</a>
+            <a href="#" class="btn btn-danger px-4 gap-3" onclick="limpa_receitas();">Limpar</a> 
           </div>
         </div>
       </section>
@@ -338,11 +339,6 @@
           return;
         }
       
-        window.onafterprint = function(){
-          limpa_receitas();
-          limpa_formulario();
-        }
-        
         window.print();
 
         document.getElementById("receituario").setAttribute("class", "container");
