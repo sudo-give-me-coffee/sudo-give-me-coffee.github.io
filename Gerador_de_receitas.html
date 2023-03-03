@@ -1,0 +1,446 @@
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gerador de receitas médicas">
+    <meta name="author" content="Natanael Barbosa Santos">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Receituário</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <style>
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      }
+      .print {
+      display: none !important;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+      .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+      .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+      }
+      .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+      }
+      .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      }
+    </style>
+    <style media="print" id="CSS_impressao">
+      header, footer, aside, nav, form, iframe, .menu, .hero, .app {
+      display: none;
+      }
+      body {
+      margin:0;
+      }
+      .logo_prefeitura {
+      visibility: visible;
+      }
+      @page 
+      {
+      size: auto;   /* auto is the initial value */
+      margin: 0mm;  /* this affects the margin in the printer settings */
+      }
+      .print {
+      display: flex !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">MÉDICO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Página inicial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ferramentas_medico.html">Lista de ferramentas</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="py-5 text-center container app">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <br>
+            <h1 class="fw-light">Gerador de receitas</h1>
+            <p class="lead text-muted">Use os campos abaixo para preencher a receita, quando terminar clique em <br> </p>
+            <a href="#" class="btn btn-primary btn-lg px-4 gap-3" onclick="imprimir();">Imprimir</a>
+          </div>
+        </div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container app">
+          <div id="list-example" class="list-group">
+            <div class="input-group mb-3">
+              <div>
+                <label for="nome_medicamento" class="form-label">Medicamento:</label>
+                <input class="form-control" style="max-width:480!important" list="datalistMedicamento" id="nome_medicamento">
+                <datalist id="datalistMedicamento">
+                  <option value="Ibuprofeno">
+                  <option value="Paracetamol">
+                  <option value="Dipirona">
+                  <option value="Sorofisiolóligo">
+                  <option value="Amoxicilina com clavulanato">
+                  <option value="Ciclo 21">
+                  <option value="Loratadina">
+                  <option value="Histamin">
+                  <option value="Dipirona">
+                  <option value="Selene">
+                  <option value="Nasojet">
+                </datalist>
+              </div>
+              &emsp;
+              <div>
+              <label for="nome_medicamento form-control-lg" class="form-label">Concentração:</label>
+              <input class="form-control" style="max-width:480!important" list="datalistConcentracao" id="concentracao">
+              <datalist id="datalistConcentracao">
+              <option value="5 mg">
+              <option value="10 mg">
+              <option value="20 mg">
+              <option value="25 mg">
+              <option value="40 mg">
+              <option value="50 mg">
+              <option value="100 mg">
+              <option value="600 mg">
+              <option value="700 mg">
+              <option value="500 ml">
+              <option value="1000 ml"></option>
+              </datalist>
+              </div>
+              &emsp;
+              <div>
+                <label for="nome_medicamento form-control-lg" class="form-label">Via:</label>
+                <input class="form-control" style="max-width:480!important" list="datalistVias" id="via">
+                <datalist id="datalistVias">
+                  <option value="Oral (Boca)">
+                  <option value="Retal (Anal)">
+                  <option value="Sublingual (Debaixo da língua)">
+                  <option value="Endovenosa (Injeção)">
+                  <option value="Subcutânea (Injeção)">
+                  <option value="Intramuscular (Injeção)">
+                  <option value="Cutânea (Sobre a pele)">
+                  <option value="Nasal (Nariz)">
+                  <option value="Ocular (Olhos)">
+                  <option value="Nebulização (Inalação)">
+                </datalist>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+            <div>
+            <input class="form-check-input" type="checkbox" value="" id="apenas_se_dor" role="switch" onchange="desmarcar_se_febre();">
+            <label class="form-check-label" for="apenas_se_dor" >
+            Em caso de dor 
+            </label>
+            </div>
+            &emsp;
+            <div>
+            <input class="form-check-input" type="checkbox" value="" id="apenas_se_febre" onchange="desmarcar_se_dor();">
+            <label class="form-check-label" for="apenas_se_febre" role="switch" >
+            Apenas se febre
+            </label>
+            </div>
+            &emsp;
+            <div>
+            <input class="form-check-input" type="checkbox" value="" id="alimentar_antes">
+            <label class="form-check-label" for="alimentar_antes" role="switch">
+            Alimentar antes
+            </label>
+            </div>
+            &emsp;
+            <div>
+            <input class="form-check-input" type="checkbox" value="" id="dose_unica" onchange="mostrar_ocultar_periodo();">
+            <label class="form-check-label" for="dose_unica" role="switch" >
+            Dose única
+            </label>
+            </div>
+            </div>
+            <div class="input-group mb-3" id=periodo_uso>
+            <div>
+            <label class="form-check-label" for="flexCheckChecked2" >
+            A cada: 
+            </label>
+            </div>
+            &emsp;
+            <input class="form-control" style="max-width:320!important" list="datalistOptions" id="frequencia" placeholder="Digite ou escolha a frequência...">
+            <datalist id="datalistOptions">
+            <option value="30 minutos">
+            <option value="1 hora">
+            <option value="2 horas">
+            <option value="6 horas">
+            <option value="8 horas">
+            <option value="12 horas">
+            <option value="24 horas">
+            <option value="72 horas">
+            </datalist>
+            &emsp;
+            <div>
+            <label class="form-check-label" for="flexCheckChecked2" >
+            Durante: 
+            </label>
+            </div>
+            &emsp;
+            <input class="form-control" style="max-width:320!important" list="datalistOptions2" id="periodo" placeholder="Digite ou escolha o período...">
+            <datalist id="datalistOptions2">
+            <option value="1 dia">
+            <option value="2 dias">
+            <option value="4 dias">
+            <option value="6 dias">
+            <option value="1 semana">
+            <option value="2 semanas">
+            <option value="21 dias">
+            <option value="1 mês">
+            <option value="2 meses">
+            </datalist>
+            </div>
+            <a href="#" class="btn btn-secondary px-4 gap-3" onclick="adiciona_receita();">Adicionar</a> 
+            <br/>
+            <hr/>
+            <br/>
+          </div>
+        </div>
+        <div class="container" id=receituario_corpo>
+        <div class="d-flex align-items-center p-3 my-3 bg-purple rounded print">
+        <img class="me-3" src="logo.png" alt="" width="50" height="50">
+        <div class="lh-1">
+        <h1 class="h6 mb-0 lh-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prefeitura Municipal de Taiobeiras</font></font></h1>
+        <small><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Secretaria de saúde</font></font></small>
+        </div>
+        </div>
+        <div id=receituario_cabecalho>
+        <h4> Medicamentos: </h4>
+        </div>
+        <div class="container" id=receituario>
+        </div>
+        <div id=receituario_se_febre_cabecalho>
+        <h4> Apenas se sentir febre: </h4>
+        </div>
+        <div class="container" id=receituario_se_febre>
+        </div>
+        <div id=receituario_se_dor_cabecalho>
+        <h4> Apenas se sentir dor: </h4>
+        </div>
+        <div class="container;margin-left:1cm" id=receituario_se_dor>
+        </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted py-5">
+    <div class="container">
+    <p>
+    <a href="#" class="btn btn-secondary my-2">Entrar em contato com o suporte</a>
+    </p>
+    </div>
+    </footer>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+      function limpa_receitas() {
+        document.getElementById("receituario").innerHTML = "";
+        document.getElementById("receituario_se_dor").innerHTML = "";
+        document.getElementById("receituario_se_febre").innerHTML = "";
+      }
+      
+      function limpa_formulario(){
+        document.getElementById("dose_unica").checked = false;
+        document.getElementById("nome_medicamento").value = "";
+        document.getElementById("frequencia").value = "";
+        document.getElementById("periodo").value = "";
+        document.getElementById("concentracao").value = "";
+        document.getElementById("via").value = "";
+        document.getElementById("alimentar_antes").checked = false;
+        document.getElementById("apenas_se_dor").checked = false;
+        document.getElementById("apenas_se_febre").checked = false;
+        document.getElementById("periodo_uso").style.visibility = "visible";
+      }
+      
+      var i = 1;
+      
+      function imprimir(){
+        event.preventDefault();
+        var sem_medicamentos = 0;
+        var receituario_se_dor = document.getElementById("receituario_se_dor");
+        if (receituario_se_dor.children.length == 0) {
+          document.getElementById("receituario_se_dor").setAttribute("class", "app");
+          document.getElementById("receituario_se_dor_cabecalho").setAttribute("class", "app");
+          sem_medicamentos += 1;
+        }
+      
+        if (receituario_se_febre.children.length == 0) {
+          document.getElementById("receituario_se_febre").setAttribute("class", "app");
+          document.getElementById("receituario_se_febre_cabecalho").setAttribute("class", "app");
+          sem_medicamentos += 1;
+        }
+      
+      
+        var receituario = document.getElementById("receituario");
+        if (receituario.children.length == 0) {
+          document.getElementById("receituario").setAttribute("class", "app");
+          document.getElementById("receituario_cabecalho").setAttribute("class", "app");
+          sem_medicamentos += 1;
+        }
+      
+        if (sem_medicamentos == 3) {
+          alert("Você precisa adicionar ao menos 1 medicamento para imprimir uma receita");
+          document.getElementById("receituario").setAttribute("class", "");
+          document.getElementById("receituario_cabecalho").setAttribute("class", "");
+      
+          document.getElementById("receituario_se_dor").setAttribute("class", "");
+          document.getElementById("receituario_se_dor_cabecalho").setAttribute("class", "");
+          return;
+        }
+      
+        window.print();
+      
+        limpa_receitas();
+        limpa_formulario();
+
+        document.getElementById("receituario").setAttribute("class", "container");
+        document.getElementById("receituario_cabecalho").setAttribute("class", "");
+      
+        document.getElementById("receituario_se_dor").setAttribute("class", "container");
+        document.getElementById("receituario_se_dor_cabecalho").setAttribute("class", "");
+      
+        document.getElementById("receituario_se_febre").setAttribute("class", "container");
+        document.getElementById("receituario_se_febre_cabecalho").setAttribute("class", "");
+      }
+      
+      function mostrar_ocultar_periodo() {
+        if (document.getElementById("dose_unica").checked == true) {
+          document.getElementById("periodo_uso").style.visibility = "hidden";
+          return;
+        }
+        document.getElementById("periodo_uso").style.visibility = "visible";
+      }
+      
+      function desmarcar_se_dor() {
+        if (document.getElementById("apenas_se_febre").checked == true) {
+          document.getElementById("apenas_se_dor").checked = false;
+        }
+      }
+      
+      function desmarcar_se_febre() {
+        if (document.getElementById("apenas_se_dor").checked == true) {
+          document.getElementById("apenas_se_febre").checked = false;
+        }
+      }
+      
+      function remove_medicamento(id) {
+        event.preventDefault();
+        document.getElementById(id).remove();
+      }
+      
+      function adiciona_receita() {
+        event.preventDefault();
+        if (document.getElementById("nome_medicamento").value.trim() == "") {
+          alert("Nome do medicamento em branco");
+          return;
+        }
+      
+        if (document.getElementById("dose_unica").checked == false){
+          if (document.getElementById("frequencia").value.trim() == "") {
+            alert("Você não marcou dose única mas também não pôs a frequência");
+            return;
+          }
+          if (document.getElementById("periodo").value.trim() == "") {
+            alert("Você não marcou dose única mas também não pôs o periodo");
+            return;
+          }
+        }
+      
+        var elemento = document.createElement("div");
+        elemento.id="medicamento_"+i;
+      
+        var conteudo = "<p><b>";
+        conteudo += document.getElementById("nome_medicamento").value.trim();
+        conteudo += " "+document.getElementById("concentracao").value.trim();
+        conteudo += " tomar via "+document.getElementById("via").value.trim();
+        conteudo += "</b>";
+      
+        if (document.getElementById("dose_unica").checked == true){
+          conteudo += " - Apenas uma dose";
+        } else {
+          conteudo += "- de "+document.getElementById("frequencia").value
+          conteudo += " em "+document.getElementById("frequencia").value
+          conteudo += " por "+document.getElementById("periodo").value;
+        }
+      
+        if (document.getElementById("alimentar_antes").checked == true){
+          conteudo += " - Não tomar o medicamento de barriga vazia";
+        } else {
+      
+        }
+      
+        conteudo += "&emsp;<a href=\"#\" class='btn btn-danger app' onclick=\"remove_medicamento('"+elemento.id+"');\">Remover</a>";
+      
+        conteudo += "</p>";
+      
+        elemento.innerHTML=conteudo;
+      
+        i+=1;
+        var receituario = document.getElementById("receituario")
+      
+        if (document.getElementById("apenas_se_dor").checked == true){
+          receituario = document.getElementById("receituario_se_dor");
+        }
+      
+        if (document.getElementById("apenas_se_febre").checked == true){
+          receituario = document.getElementById("receituario_se_febre");
+        }
+      
+        receituario.appendChild(elemento);
+      
+        limpa_formulario();
+      }
+          
+    </script>
+  </body>
+</html>
