@@ -88,7 +88,7 @@
     
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Acesso do profissional</a>
+        <a class="navbar-brand" href="#">Trocar acesso</a>
       </div>
     </nav>
     <h1>
@@ -99,41 +99,62 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
       <div class="container marketing">
 
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div style="display: none;">
+          <div id="alerta-cadastro-invalido" class="alert alert-danger alert-dismissible fade show" role="alert">
+            Você possui cadastros com erros que invalidam sua produção
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="document.getElementById('alerta-cadastro-invalido').remove();"></button>
+          </div>
+  
+          <div id="alerta-data-producao" class="alert alert-warning alert-dismissible fade show" role="alert">
+            Você tem até xx/xx/xxxx para subir sua produção
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="document.getElementById('alerta-data-producao').remove();"></button>
+          </div>
         </div>
+        
 
         <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" id="visitas-selo"></rect>
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em" id="visitas">n</text>
-            </svg>
-            <h2 class="fw-normal">Visitas</h2>
+        
+        <div>
+          <table class="table">
+            <tbody>
+            <tr>
+              <th scope="row">Pacientes</th>
+              <td id="no-pacientes">0</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Famílias</th>
+              <td id="no-familias">0</td>
+            </tr>
+
+            <tr>
+              <th scope="row">&nbsp;</th>
+              <th scope="row">&nbsp;</th>
+            </tr>
+
+            <tr>
+              <th scope="row">Visitas individuais</th>
+              <td id="no-visitas">0</td>
+            </tr>
+
+            <tr class="table-danger">
+              <th scope="row">Cobertura de área</th>
+              <td id="per-cobertura">0</td>
+            </tr>
+
+            <tr class="table-warning">
+              <th scope="row">Georreferenciamento</th>
+              <td id="per-georref">0</td>
+
+            </tr>
+
+            </tbody>
+          </table>
           </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" id="georreferenciamento-selo"></rect>
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em" id="georreferenciamento">n%</text>
-            </svg>
-            <h2 class="fw-normal">Georref.</h2>
-          </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="100" height="100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" id="cobertura-selo"></rect>
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em" id="cobertura">n%</text>
-            </svg>
-            <h2 class="fw-normal">Cobertura</h2>
-          </div>
-          <!-- /.col-lg-4 -->
-        </div>
+
+          <h1>
+            <br>
+          </h1>
 
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
