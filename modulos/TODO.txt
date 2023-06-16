@@ -1,0 +1,6 @@
+Contagem de pacientes
+  |Total|Masculino|Feminino|
+  
+- Por Bairro
+- Por Comunidade
+- Geral

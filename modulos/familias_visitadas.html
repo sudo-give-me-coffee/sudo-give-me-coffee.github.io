@@ -1,0 +1,204 @@
+<html lang="pt_BR" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>Perfil do Agente de Saúde</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <style>
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+      .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+      .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+      }
+      .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+      }
+      .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+      z-index: 1500;
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <script src="../data/nome_agente.js"></script>
+    <script src="../data/FamiliasVisitadas.js"></script>
+  </head>
+  <body class="bg-body-tertiary">
+    
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="acs.html" id="nome">Profissional</a>
+      </div>
+    </nav>
+    <h1>
+      <br>
+    </h1>
+      <!-- Marketing messaging and featurettes
+        ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+      <div class="container marketing">
+
+
+        <!-- Three columns of text below the carousel -->
+
+        <p class="display-6">
+          Famílias visitadas
+        </p>
+        <div>
+          <table class="table">
+            <tbody id="tabela">
+
+            </tbody>
+          </table>
+          </div>
+
+          <div class="my-3 p-3 bg-body">
+            <h6 class="border-bottom pb-2 mb-0">Legenda</h6>
+
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#D0E8DD"></rect><text x="50%" y="50%" fill="#D0E8DD" dy=".3em">32x32</text></svg>
+              <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                  <strong class="text-gray-dark">Família visitada</strong>
+                </div>
+                <span class="d-block">Significa que a visita está registrada no sistema</span>
+              </div>
+            </div>
+
+            <div class="d-flex text-body-secondary pt-3">
+              <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#F9D7DA"></rect><text x="50%" y="50%" fill="#F9D7DA" dy=".3em">32x32</text></svg>
+              <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                  <strong class="text-gray-dark">Sem visita</strong>
+                </div>
+                <span class="d-block">Significa que a visita não foi registrada no sistema</span>
+              </div>
+            </div>
+
+            <!--<hr class="featurette-divider">-->
+        </div>
+        <!-- /END THE FEATURETTES -->
+      </div>
+
+      <hr class="featurette-divider">
+      <!-- /.container -->
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-end"><a href="#">Voltar pra cima</a></p>
+        <p><a href="suporte.html" id="suporte">Suporte</a></p>
+      </footer>
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+
+const urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.get('cod') == null) {
+  document.location.replace("../index.html");
+}
+
+let cod = urlParams.get('cod').toUpperCase();
+
+if (Nome_Agente[cod] == null) {
+  document.location.replace("../index.html");
+}
+
+document.getElementById("nome").innerHTML=Nome_Agente[cod].charAt(0) + Nome_Agente[cod].slice(1).toLowerCase();
+document.getElementById("nome").href+="?cod="+cod;
+document.getElementById("suporte").href+="?cod="+cod;
+var i = 0;
+var estilos = []
+
+for (const familia of FamiliasVisitadas[cod]) {
+  estilos[i] = familia.startsWith("-")?"table-danger":"table-success";
+  FamiliasVisitadas[cod][i]=familia.replace("-","");
+  i += 1;
+}
+
+FamiliasVisitadas[cod].sort();
+
+var i = 0;
+var j = 1;
+var rows = "";
+var tr = document.createElement("tr");
+
+for (const familia of FamiliasVisitadas[cod]) {
+  i += 1;
+  rows += '<td class="'+estilos[j]+'">'+familia+'</td>';
+  j += 1;
+  if (i == 8) {
+    i = 0;
+    tr.innerHTML=rows;
+    document.getElementById("tabela").appendChild(tr);
+    tr = document.createElement("tr");
+    rows = ""
+  }
+}
+
+
+    </script>
+  </body>
+</html>
