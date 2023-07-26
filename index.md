@@ -1,5 +1,11 @@
-| ![](https://www.devcaminhante.org/_next/image?url=%2Fimages%2Fdevcaminhante.jpg&w=64&q=75) | <h1>DevCaminhante</h1> |
-|--------------------------------|--------------------|
+
+<table>
+  <tr>
+    <td><img src="https://www.devcaminhante.org/_next/image?url=%2Fimages%2Fdevcaminhante.jpg&w=64&q=75"></td>
+    <td><h1>DevCaminhante</h1></td>
+  </tr>
+</table>
+
 
 <p align='justify'>DevCaminhante é um projeto dedicado a acolher desde quem está pensando em entrar na área de programação até quem já está nessa área, recebendo de braços
 abertos os devs mais experientes que querem compartilhar conhecimento e também aprender, estimulando o crescimento mútuo, 
